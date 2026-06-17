@@ -1,0 +1,39 @@
+BUG LOG
+=======
+
+BUG-1: Draft project creation hangs at 99%
+-------------------------------------------
+Area:     AI Projects -> Add project -> (draft) project
+Severity: High (blocks the flow, no recovery)
+Description:
+  When adding a project, after selecting the draft project it gets stuck at 99%
+  on "Quality Assurance & Optimization", and there is no way to close it.
+
+BUG-2: AI question generation ignores the selected question type
+----------------------------------------------------------------
+Area:     Project editor -> Add question
+Severity: Medium
+Description:
+  If a user selects "Add question" with a type other than rating and then
+  chooses AI to generate the question, the AI always creates a ratings question
+  (ignoring the chosen type).
+
+BUG-3: Publish button does not update its state after publishing
+----------------------------------------------------------------
+Area:     Project editor -> Publish
+Severity: Medium (UX / confusing state)
+Description:
+  After the project is published, the publish button still shows the same
+  "Publish" button rather than reflecting a published state. This may degrade
+  the user experience by making users think the project might not be published
+  yet.
+
+
+NOTE (not a bug, but a testing trap):
+  The project-type radio data-test ids do not match their visible labels:
+    AI User Test -> project-type-radio-usabilitytesting
+    AI Interview -> project-type-radio-survey
+    AI Survey    -> project-type-radio-form
+    AI Poll      -> project-type-radio-poll
+  i.e. "AI Survey" is project-type-radio-FORM and "AI Interview" is
+  project-type-radio-SURVEY. Easy to pick the wrong one.
